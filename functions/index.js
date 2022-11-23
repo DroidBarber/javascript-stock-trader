@@ -4,15 +4,15 @@ const functions = require('firebase-functions');
 
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
-  organization: functions.config().openai.id, // REPLACE with your API credentials
-  apiKey: functions.config().openai.key, // REPLACE with your API credentials
+  organization: functions.config().openai.id,
+  apiKey: functions.config().openai.key,
 });
 const openai = new OpenAIApi(configuration);
 
 const Alpaca = require('@alpacahq/alpaca-trade-api');
 const alpaca = new Alpaca({
-  keyId: functions.config().alpaca.id, // REPLACE with your API credentials
-  secretKey: functions.config().alpaca.key, // REPLACE with your API credentials
+  keyId: functions.config().alpaca.id,
+  secretKey: functions.config().alpaca.key,
   // paper: true,
 });
 
